@@ -8,7 +8,7 @@
 
 void EXTI_SetSource(uint32_t port,uint32_t pin)
 {
-	uint32_t Reg = port / 4;
+	uint32_t Reg = pin / 4;
 	uint32_t Bit = (pin % 4) * 8;
 
 	MODIFY_REG(EXTI->EXTICR[Reg],EXTI_EXTICR1_EXTI0 << Bit, port << Bit);
